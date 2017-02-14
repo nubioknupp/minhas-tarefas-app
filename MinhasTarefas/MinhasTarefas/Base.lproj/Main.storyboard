@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="1333.5999999999999" y="94.902548725637189"/>
         </scene>
-        <!--View Controller-->
+        <!--Adicionar View Controller-->
         <scene sceneID="h3e-J9-oh7">
             <objects>
-                <viewController id="f4l-IM-ana" sceneMemberID="viewController">
+                <viewController id="f4l-IM-ana" customClass="AdicionarViewController" customModule="MinhasTarefas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="29v-Zj-P0B"/>
                         <viewControllerLayoutGuide type="bottom" id="nKA-Pt-gW8"/>
@@ -56,19 +56,29 @@
                     <view key="view" contentMode="scaleToFill" id="zmH-ps-oSq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETz-u1-FK3">
+                                <rect key="frame" x="143" y="318" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Adicionar"/>
+                                <connections>
+                                    <action selector="AdicionarTarefaAction:" destination="f4l-IM-ana" eventType="touchUpInside" id="cpO-ve-whz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdy-HA-bxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="95"/>
+            <point key="canvasLocation" x="2392.8000000000002" y="94.902548725637189"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kwE-1I-5CC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3j5-mD-TZd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Tck-KA-q9f">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tck-KA-q9f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.49803921568627452" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
