@@ -44,6 +44,20 @@ class TarefaTableViewController: UITableViewController {
         return celula;
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            
+            let tarefaUserDefault = TarefaUserDefaults()
+            tarefaUserDefault.DeletarTarefa(index: indexPath.row )
+            
+            ListaTarefas()
+            tableView.reloadData()
+            
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
