@@ -10,6 +10,9 @@ import UIKit
 
 class AdicionarViewController: UIViewController {
 
+    
+    @IBOutlet weak var tarefaTextView: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,7 +24,14 @@ class AdicionarViewController: UIViewController {
     }
 
     @IBAction func AdicionarTarefaAction(_ sender: Any) {
-            _ = navigationController?.popToRootViewController(animated: true)
+        if let tarefa = tarefaTextView.text {
+            
+            let tarefaUserDefaults = TarefaUserDefaults();
+            tarefaUserDefaults.SalvarTarefa(tarefa: tarefa);
+            tarefaTextView.text = "";
+            
+            _ = navigationController?.popToRootViewController(animated: true);
+        }
             //_ = navigationController?.popViewController(animated: true)
     }
 }

@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class TarefaUserDefaults{
+class TarefaUserDefaults{
 
-    let minhasTarefasChave = "MinhasTarefas";
+    private let minhasTarefasChave = "MinhasTarefas";
     
     func SalvarTarefa(tarefa : String) {
-        var tarefas : [String] = [];
+        var tarefas = ListaTarefas();
         tarefas.append(tarefa);
         UserDefaults.standard.set(tarefas, forKey: minhasTarefasChave);
     }

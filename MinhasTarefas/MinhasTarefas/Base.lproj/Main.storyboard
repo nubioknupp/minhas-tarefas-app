@@ -6,19 +6,20 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Minhas Tarefas-->
         <scene sceneID="0lc-i0-YcQ">
             <objects>
-                <tableViewController id="cni-92-V2e" sceneMemberID="viewController">
+                <tableViewController id="cni-92-V2e" customClass="TarefaTableViewController" customModule="MinhasTarefas" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Lf-0H-hLZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bw0-Yz-GxE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaTarefaId" id="bw0-Yz-GxE">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bw0-Yz-GxE" id="lH5-1a-57J">
@@ -43,7 +44,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qi7-2A-56R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1333.5999999999999" y="94.902548725637189"/>
+            <point key="canvasLocation" x="924" y="94"/>
         </scene>
         <!--Adicionar View Controller-->
         <scene sceneID="h3e-J9-oh7">
@@ -57,9 +58,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETz-u1-FK3">
-                                <rect key="frame" x="143" y="318" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicionar Tarefa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKd-Rs-knc">
+                                <rect key="frame" x="73" y="110" width="229" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Owy-GK-rme">
+                                <rect key="frame" x="16" y="180" width="343" height="22"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETz-u1-FK3">
+                                <rect key="frame" x="155" y="223" width="65" height="30"/>
                                 <state key="normal" title="Adicionar"/>
                                 <connections>
                                     <action selector="AdicionarTarefaAction:" destination="f4l-IM-ana" eventType="touchUpInside" id="cpO-ve-whz"/>
@@ -67,11 +79,25 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Owy-GK-rme" firstAttribute="centerX" secondItem="QKd-Rs-knc" secondAttribute="centerX" id="DSi-m3-UJ0"/>
+                            <constraint firstItem="QKd-Rs-knc" firstAttribute="leading" secondItem="zmH-ps-oSq" secondAttribute="leadingMargin" constant="57" id="Dy4-BQ-4oG"/>
+                            <constraint firstItem="Owy-GK-rme" firstAttribute="leading" secondItem="zmH-ps-oSq" secondAttribute="leadingMargin" id="LJY-3K-2F9"/>
+                            <constraint firstItem="ETz-u1-FK3" firstAttribute="top" secondItem="Owy-GK-rme" secondAttribute="bottom" constant="21" id="Vrt-Dc-Cbb"/>
+                            <constraint firstItem="Owy-GK-rme" firstAttribute="top" secondItem="QKd-Rs-knc" secondAttribute="bottom" constant="49" id="WXf-TF-2Yi"/>
+                            <constraint firstItem="Owy-GK-rme" firstAttribute="centerX" secondItem="ETz-u1-FK3" secondAttribute="centerX" id="XSj-ge-1Tq"/>
+                            <constraint firstItem="Owy-GK-rme" firstAttribute="top" secondItem="zmH-ps-oSq" secondAttribute="top" constant="180" id="YPe-oB-vtO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QKd-Rs-knc" secondAttribute="trailing" constant="57" id="prf-jB-isB"/>
+                            <constraint firstItem="QKd-Rs-knc" firstAttribute="top" secondItem="29v-Zj-P0B" secondAttribute="bottom" constant="46" id="wza-8D-JZj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tarefaTextView" destination="Owy-GK-rme" id="ZJz-qv-w0m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdy-HA-bxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2392.8000000000002" y="94.902548725637189"/>
+            <point key="canvasLocation" x="2210" y="92"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kwE-1I-5CC">
@@ -93,7 +119,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ku-Z8-Bdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392.80000000000001" y="94.902548725637189"/>
+            <point key="canvasLocation" x="-130" y="93"/>
         </scene>
     </scenes>
 </document>
